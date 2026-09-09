@@ -9,9 +9,9 @@ Autores:
 
 ## 1 TL;DR
 
-<!--
-párrafo corto que explica qué estas proponiendo
--->
+Muchas veces queremos salir de nuestras casas y no tenemos ningun plan y nos da un poco de pereza buscar en sitios eventos o cosas asi que se estan realizando en la ciudad, 
+proponemos una plataforma inteligente que permita descubrir actividades y convertirlas en planes personalizados segun presupuesto, tiempo, ubicacion, intereses y disponibilidad, 
+facilitando la reserva y compra mediante integraciones con provedores externos.
 
 ## 2 Motivación
 
