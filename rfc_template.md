@@ -43,6 +43,8 @@ Que métricas debemos vamos a instrumentar, o monitorear para observar las impli
 Por ejemplo, cuando interactuamos con un sistema externo que tipo de latencia esperariamos o si agregamos una tabla nueva que tan rápido se llenaría?
 -->
 
+La cantidad de regaños a David es proporcional a la cantidad de errores cometidos, mantener al mínimo posible (si David colabora).
+
 ## 5 Riesgos e inconvenientes
 
 <!--
