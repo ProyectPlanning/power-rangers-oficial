@@ -14,7 +14,7 @@ proponemos una plataforma inteligente que permita descubrir actividades y conver
 facilitando la reserva y compra mediante integraciones con provedores externos.
 
 ## 2 Motivación
-
+La motivación de escoger esta decisión es porque no nos pusimos de acuerdo y a veces la dictadura no es tan mala elección, por la nota y por aprender
 <!--
 ¿qué motiva esta decisión y por qué es importante?
 el propósito de esta sección es articular de una manera sencilla el valor de la decision que vamos a tomar
