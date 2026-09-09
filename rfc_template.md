@@ -1,7 +1,11 @@
-# Título (lee el source code del markdown para ver los comentarios)
+# PLANEA
 
 Autores:
- - @githubusername
+ - @crdiazo
+ - @juanRodriguez-repositorio
+ - @malorac
+ - @NicoLovera18
+ - @David123just
 
 ## 1 TL;DR
 
