@@ -1,11 +1,11 @@
 # PLANEA
 
 Autores:
- - @crdiazo
- - @juanRodriguez-repositorio
- - @malorac
- - @NicoLovera18
- - @David123just
+ - Cristian Andres Diaz Ortega - @crdiazo
+ - Juan Sebastian Rodriguez Carvajal - @juanRodriguez-repositorio
+ - Martin Lora Caro - @malorac
+ - Justin David Vargas Vasquez - @David123just
+ - Nicolas David Lovera Cabiativa - @NicoLovera18
 
 ## 1 TL;DR
 
