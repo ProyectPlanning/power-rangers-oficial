@@ -1,4 +1,4 @@
-# ADR-0001: Usar React + TypeScript con TanStack Query, Zustand y Tailwind para el frontend
+# ADR-0001: Usar React, TypeScript, vite y Tailwind CSS para el frontend
 <!-- docs/adr/0001-usar-react-typescript-tanstack-query-zustand-tailwind.md -->
 
 ## Autores:
@@ -13,8 +13,7 @@ tecnologías del stack, por lo que la curva de aprendizaje es una fuerza restric
 pivote. React es un requisito explícito del proyecto.
 
 ## Decisión
-Vamos a construir el frontend con React 19 + TypeScript + Vite, apoyándonos en TanStack Query para estado remoto y caché, Zustand para estado global ligero, React Hook Form + Zod para formularios
-y validación, y Tailwind CSS para estilos.
+Vamos a construir el frontend con React 19,TypeScript y Vite, además de Tailwind CSS para los estilos.
 
 ## Alternativas consideradas
 
@@ -25,8 +24,6 @@ que el equipo no está preparado para absorber en el MVP. La migración futura e
 
 - Angular: Mayor estructura, pero curva de aprendizaje pronunciada y más verboso; no se alinea con la velocidad requerida para el MVP.
 
-- Redux Toolkit en lugar de Zustand: Más estructurado pero con mayor boilerplate; se descarta por costo de aprendizaje frente al beneficio en un MVP.
-
 - CSS Modules / styled-components en lugar de Tailwind: Se descartan por velocidad de iteración; Tailwind reduce el cambio de contexto entre HTML y CSS.
 
 ## Consecuencias
@@ -35,16 +32,16 @@ que el equipo no está preparado para absorber en el MVP. La migración futura e
 
 - Un solo lenguaje (TypeScript) en frontend y backend, reduciendo la carga cognitiva del equipo.
 
-- TanStack Query resuelve caché, reintentos, invalidación y estados de carga del servidor sin necesidad de código manual.
-
-- Los esquemas Zod pueden compartirse con el backend (NestJS) para validación consistente.
-
 - Vite acelera el ciclo de desarrollo con HMR casi instantáneo.
+  
+- Ecosistema maduro para flujos interactivos (React): Facilita la integración de librerías especializadas para el MVP, como selectores de fechas, mapas interactivos, sliders de rango de precios y manejo eficiente de formularios complejos (ej. React Hook Form).
+- Seguridad en el manejo de datos transaccionales (TypeScript): Previene errores en tiempo de ejecución al manipular estructuras de datos complejas (combinación de filtros de presupuesto, horarios, ubicaciones y estados de pago).
 
+  
 ### Negativas / costos aceptados:
 
-- Pérdida de SEO: sin SSR, las páginas de actividades no se renderizan en el servidor. Se acepta como deuda consciente; si el SEO orgánico se vuelve crítico, se evaluará migrar a Next.js.
-
-- Fragmentación del ecosistema: el equipo debe aprender React + TanStack Query + Zustand + RHF + Zod + Tailwind (6 piezas). Riesgo de inconsistencia si no se establecen convenciones desde el inicio.
-
+- Pérdida de SEO: sin SSR, las páginas de actividades no se renderizan en el servidor. Se acepta como deuda consciente; si el SEO orgánico se vuelve crítico, se evaluará migrar a Next.js
+  
 - Tailwind: HTML denso y dependencia de disciplina para mantener un sistema de diseño coherente.
+  
+- Fricción por la curva de aprendizaje (TypeScript): Para un equipo nuevo en el stack, aprender las reglas de tipado estricto puede ralentizar la velocidad inicial de prototipado durante las primeras semanas.
