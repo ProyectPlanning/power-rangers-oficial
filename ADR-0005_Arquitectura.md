@@ -39,8 +39,6 @@ hacia microservicios si la carga o la organización del equipo lo requieren en e
 
 - Transacciones ACID módulos: una reserva puede actualizar activities, bookings y payments en una sola transacción.
 
-- Menor costo operativo (una app + PostgreSQL + Redis en lugar de N servicios).
-
 - Refactorización sencilla: mover código entre módulos es trivial dentro del mismo proceso.
 
 - Camino de extracción claro: los módulos ya están desacoplados a nivel de código y pueden migrarse a servicios sin reescribir lógica.
