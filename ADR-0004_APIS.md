@@ -50,8 +50,6 @@ se implementará un adaptador específico (Bókun Channel Manager API, FareHarbo
 
 - Mantenimiento multiplicado: cada integración tiene su ciclo de vida, versiones de API y documentación. Con 5+ proveedores se requiere esfuerzo dedicado continuo.
 
-- Latencia en el flujo de reserva: llamadas síncronas a proveedores añaden latencia. Se mitiga con Redis + colas asíncronas y circuit breakers por proveedor.
-
 - Dependencia de Stripe: costos por transacción y lock-in moderado; migrar después es costoso.
 
 - REST en lugar de GraphQL: el frontend puede requerir múltiples llamadas para una vista; se compensa con endpoints agregados específicos.
