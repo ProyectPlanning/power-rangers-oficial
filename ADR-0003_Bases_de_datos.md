@@ -1,4 +1,4 @@
-# ADR-0003: Usar PostgreSQL como base de datos principal y Redis como caché
+# ADR-0003: Usar PostgreSQL para la base de datos 
 <!-- docs/adr/0003-postgresql-principal-redis-cache.md -->
 
 ## Autores:
@@ -15,7 +15,7 @@ sin migraciones constantes. La carga esperada en MVP (Producto Mínimo Viable) e
 
 ## Decisión
 
-Vamos a usar PostgreSQL como base de datos principal (con extensión PostGIS para consultas geográficas y JSONB para atributos flexibles) y Redis como capa de caché, rate limiting y colas de trabajo (BullMQ).
+Vamos a usar PostgreSQL, con extensión PostGIS para consultas geográficas y JSONB para atributos flexibles.
 
 ## Alternativas consideradas:
 
@@ -23,13 +23,11 @@ Vamos a usar PostgreSQL como base de datos principal (con extensión PostGIS par
 
 - DynamoDB: Serverless y auto-escalable, pero consultas complejas limitadas, sin JOINs y con vendor lock-in fuerte con AWS. Mal encaje para reportes y analítica temprana. 
 
-- MySQL / MariaDB: Válidos, pero sin PostGIS nativo y con JSONB menos maduro. PostgreSQL es el estándar de facto en el ecosistema elegido.
+- MySQL / MariaDB: Válidos, pero sin PostGIS nativo y con JSONB menos maduro.
 
 - SQLite: Descartado por falta de concurrencia y capacidades de red para un servicio multiusuario.
 
 - Cassandra / ScyllaDB: Sobredimensionados para la carga esperada; sin transacciones ACID cómodas.
-
-- Redis como base de datos principal: Descartado por naturaleza en memoria (persistencia no garantizada) y limitaciones en consultas relacionales.
 
 ## Consecuencias
 
@@ -43,12 +41,8 @@ Vamos a usar PostgreSQL como base de datos principal (con extensión PostGIS par
 
 - PostgreSQL es el estándar de facto del mercado, facilitando contratación y comunidad.
 
-- Redis complementa sin reemplazar: caché de disponibilidad, sesiones, rate limiting y colas asíncronas para llamadas a proveedores externos.
-
 ### Negativas / costos aceptados:
 
 - Escalabilidad horizontal limitada: crecer más allá de una instancia requiere sharding manual o Citus. Se acepta como deuda consciente para el MVP.
 
 - Rendimiento en escritura inferior a bases NoSQL para cargas masivas; no relevante para el volumen proyectado.
-
-- Dos sistemas que operar: PostgreSQL + Redis añaden superficie operativa (backups, monitoreo, alta disponibilidad).
